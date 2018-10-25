@@ -58,4 +58,22 @@ public class UserService {
 
         return rs.getString("username");
     }
+
+    public User getUser(String id) throws SQLException {
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT * FROM users where id='" + id+ "'");
+
+        rs.next();
+        return new User (rs.getString("username"),
+                rs.getString("password"));
+
+    }
+
+    public void addUser(User user) throws SQLException {
+        Statement statement = conn.createStatement();
+        String sql = "insert into users values (0,'" + user.getUsername() + "','" + user.getPassword() + "',0)";
+        System.out.println(sql);
+        statement.executeUpdate(sql);
+
+    }
 }
