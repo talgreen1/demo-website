@@ -69,11 +69,12 @@ public class UserService {
 
     }
 
-    public void addUser(User user) throws SQLException {
+    public User addUser(User user) throws SQLException {
         Statement statement = conn.createStatement();
         String sql = "insert into users values (0,'" + user.getUsername() + "','" + user.getPassword() + "',0)";
         System.out.println(sql);
         statement.executeUpdate(sql);
 
+        return user;
     }
 }

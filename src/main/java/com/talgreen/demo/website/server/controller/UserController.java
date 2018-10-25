@@ -18,7 +18,7 @@ public class UserController {
         userService = new UserService();
     }
 
-    @RequestMapping(path="api/users", produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "api/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public User[] main() throws SQLException {
         User[] allUsernames = userService.getAllUsernames();
         System.out.println(allUsernames);
@@ -30,12 +30,13 @@ public class UserController {
         return userService.getUser(id);
     }
 
-    @RequestMapping(path = "api/users/", method = RequestMethod.POST)
-    public void addUser(@RequestBody User user) throws SQLException {
-        userService.addUser(user);
+    @RequestMapping(path = "api/users", method = RequestMethod.POST)
+    public User addUser(@RequestBody User user) throws SQLException {
+        return userService.addUser(user);
     }
+
     @RequestMapping("/test")
-    public String aaa(){
+    public String aaa() {
         return "Hello test";
     }
 

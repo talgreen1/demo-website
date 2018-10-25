@@ -16,19 +16,21 @@ $.ajax({
 
 $('#addUser').on('click', function(){
     var user = {
-        username: $username.val();
-        password: $password.val();
-    }
+        username: $username.val(),
+        password: $password.val()
+    };
 
+    console.log(user);
     $.ajax({
         type:'POST',
-        url:'http://localhost:8080/api/users',
-        data:user
+        url:'/api/users',
+        contentType: "application/json",
+        data:JSON.stringify(user),
         success: function(newUser){
+            console.log("hewrerer");
 
-            $.each(users, function(i, user){
                 $users.append('<li>Username  ' + newUser.username + ', password: ' + newUser.password + '</li>');
-            })
+
         }
     });
 
