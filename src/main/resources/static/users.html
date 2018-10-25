@@ -1,0 +1,54 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h1>Users</h1>
+
+<ul id="users"></ul>
+
+<label id="newUsernameLabel">New Username:</label>
+<input id="newUsernameInput"/>
+<br>
+<label id="newPasswordLabel">New Password:</label>
+<input id="newPasswordInput"/>
+<button id="addUser">Click to add user</button>
+
+<!--<table id="records_table" border='1'>-->
+    <!--<tr>-->
+        <!--<th align="center" width="50">username</th>-->
+        <!--<th align="center" width="100">password</th>-->
+    <!--</tr>-->
+<!--</table>-->
+
+<script src="/javascripts/users.js"></script>
+<!--<script type="text/javascript">-->
+<!--$('#fill').click(function(){-->
+
+    <!--$.ajax({-->
+        <!--url: "http://localhost:8080/api/users",-->
+        <!--type: "GET",-->
+        <!--dataType:"json",-->
+        <!--success: function (response)-->
+        <!--{-->
+          <!--var trHTML = '';-->
+          <!--$.each(response, function (key,value) {-->
+             <!--trHTML +=-->
+                <!--'<tr><td>' + value.username +-->
+                <!--'</td><td>' + value.password +-->
+                <!--'</td></tr>';-->
+          <!--});-->
+
+            <!--$('#records_table').append(trHTML);-->
+        <!--}-->
+    <!--});-->
+<!--});-->
+<!--</script>-->
+
+
+
+</body>
+
+</html>

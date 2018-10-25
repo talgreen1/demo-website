@@ -18,20 +18,19 @@ public class UserController {
         userService = new UserService();
     }
 
-    @RequestMapping(path="/users", produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path="api/users", produces= MediaType.APPLICATION_JSON_VALUE)
     public User[] main() throws SQLException {
-        System.out.println("ssssssssssssssssssssssssssssssssssssssssssssssssssssss");
         User[] allUsernames = userService.getAllUsernames();
         System.out.println(allUsernames);
         return allUsernames;
     }
 
-    @RequestMapping(path = "/users/{id}")
+    @RequestMapping(path = "api/users/{id}")
     public User getUser(@PathVariable String id) throws SQLException {
         return userService.getUser(id);
     }
 
-    @RequestMapping(path = "/users/", method = RequestMethod.POST)
+    @RequestMapping(path = "api/users/", method = RequestMethod.POST)
     public void addUser(@RequestBody User user) throws SQLException {
         userService.addUser(user);
     }
